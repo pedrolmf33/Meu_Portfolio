@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio - Pedro Luiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/img_Eu.png" alt="Foto minha" class="foto-perfil">
+        <h1>Pedro Luiz</h1>
+        <p class="cabecalho-sub-titulo">Estudante de Sistema de Informação</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá, eu me chamo Pedro Luiz sou estudante de Sistema de Informação na Universidade Federal de Itajubá - UNIFEI, sou natural de Borda da Mata - MG e estou desenvolvendo vários projetos com o objetivo de compor meu portifólio, aprender e me desenvolver cada vez mais na programação.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/img_projeto1ex.jpg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="inf-projetos">Projeto 1</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae rem optio impedit cum vero alias, delectus eos, harum saepe nisi hic deserunt sunt. Rem omnis eos nam quam, cumque enim!</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/img_projeto2ex.png" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="inf-projetos">Projeto 2</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae rem optio impedit cum vero alias, delectus eos, harum saepe nisi hic deserunt sunt. Rem omnis eos nam quam, cumque enim!</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/img_projeto3ex.png" alt="Projeto 3" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="inf-projetos">Projeto 3</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae rem optio impedit cum vero alias, delectus eos, harum saepe nisi hic deserunt sunt. Rem omnis eos nam quam, cumque enim!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form action="" class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+
+            <div class="grupo-form">
+                <input type="text" name="" id="nome" placeholder="Nome" class="campo-form">
+            </div>
+
+            <div class="grupo-form">
+                <textarea name="" id="mensagem" placeholder="Digite sua Mensagem" class="campo-form" rows="8"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+
+        </form>
+
+    </section>
+
+    <script>
+        function enviarWhats(event){
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5535997312033';
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+        }
+    </script>
+
+</body>
+</html>
