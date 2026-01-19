@@ -246,3 +246,8 @@ h1{
         transform: translateY(-20px);
     }
 }
+
+a{
+    color: rgb(224, 218, 218);
+    text-decoration: none;
+}
